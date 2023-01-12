@@ -20,5 +20,22 @@ namespace DieRoller
         /// True if the d6 is currently held; otherwise False
         /// </summary>
         public bool IsHeld { get; set; }
+
+        /// <summary>
+        /// Rolls the d6, replaces the <see cref="CurrFaceValue"/> 
+        /// with the newly generated number, 
+        /// <br></br>
+        /// and then returns the new number.
+        /// </summary>
+        /// <returns>The new <see cref="CurrFaceValue"/></returns>
+        public byte RollD6()
+        {
+            // Generate random number 1 - 6
+
+            // Set generated number as current face value
+
+            // Return generated number
+            throw new NotImplementedException();
+        }
     }
 }
