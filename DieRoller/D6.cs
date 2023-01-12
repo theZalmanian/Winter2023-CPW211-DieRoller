@@ -12,6 +12,16 @@ namespace DieRoller
     public class D6
     {
         /// <summary>
+        /// An instance of the random class
+        /// </summary>
+        private static Random _random;
+
+        static D6()
+        {
+            _random = new Random();
+        }
+
+        /// <summary>
         /// The current face-up value of the d6
         /// </summary>
         public byte CurrFaceValue { get; private set; }
@@ -43,11 +53,8 @@ namespace DieRoller
             // If d6 is not held
             if(!IsHeld)
             {
-                // Setup random
-                Random rand = new();
-
                 // Generate random number 1 - 6
-                byte newValue = (byte) rand.Next(1, 7);
+                byte newValue = (byte) _random.Next(1, 7);
 
                 // Set generated number as current face value
                 CurrFaceValue = newValue;
