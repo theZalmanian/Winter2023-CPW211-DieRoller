@@ -14,7 +14,7 @@ namespace DieRoller
         /// <summary>
         /// An instance of the random class
         /// </summary>
-        private static Random _random;
+        private static readonly Random _random;
 
         static D6()
         {
