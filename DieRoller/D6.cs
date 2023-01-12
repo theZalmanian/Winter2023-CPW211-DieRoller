@@ -31,23 +31,29 @@ namespace DieRoller
         }
 
         /// <summary>
+        /// As long as the d6 is not held-
         /// Rolls the d6, replaces the <see cref="CurrFaceValue"/> 
-        /// with the newly generated number, 
         /// <br></br>
-        /// and then returns the new number.
+        /// with the newly generated number, 
+        /// and then returns the <see cref="CurrFaceValue"/> 
         /// </summary>
-        /// <returns>The new <see cref="CurrFaceValue"/></returns>
+        /// <returns>The <see cref="CurrFaceValue"/></returns>
         public byte RollD6()
         {
-            // Setup random
-            Random rand = new();
+            // If d6 is not held
+            if(!IsHeld)
+            {
+                // Setup random
+                Random rand = new();
 
-            // Generate random number 1 - 6
-            byte newValue = (byte) rand.Next(1, 7);
+                // Generate random number 1 - 6
+                byte newValue = (byte) rand.Next(1, 7);
 
-            // Set generated number as current face value
-            CurrFaceValue = newValue;
+                // Set generated number as current face value
+                CurrFaceValue = newValue;
+            }
 
+            // Return the current face-up value
             return CurrFaceValue;
         }
     }
