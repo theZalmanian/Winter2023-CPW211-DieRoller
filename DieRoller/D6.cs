@@ -30,12 +30,16 @@ namespace DieRoller
         /// <returns>The new <see cref="CurrFaceValue"/></returns>
         public byte RollD6()
         {
+            // Setup random
+            Random rand = new();
+
             // Generate random number 1 - 6
+            byte newValue = (byte) rand.Next(1, 7);
 
             // Set generated number as current face value
+            CurrFaceValue = newValue;
 
-            // Return generated number
-            throw new NotImplementedException();
+            return CurrFaceValue;
         }
     }
 }
