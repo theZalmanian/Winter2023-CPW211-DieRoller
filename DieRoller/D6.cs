@@ -14,12 +14,21 @@ namespace DieRoller
         /// <summary>
         /// The current face-up value of the d6
         /// </summary>
-        public byte CurrFaceValue { get; set; }
+        public byte CurrFaceValue { get; private set; }
 
         /// <summary>
         /// True if the d6 is currently held; otherwise False
         /// </summary>
         public bool IsHeld { get; set; }
+
+        /// <summary>
+        /// Creates a d6 and sets it's current face-up value 
+        /// to a random number (1 - 6)
+        /// </summary>
+        public D6()
+        {
+            RollD6();
+        }
 
         /// <summary>
         /// Rolls the d6, replaces the <see cref="CurrFaceValue"/> 
